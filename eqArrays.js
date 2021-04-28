@@ -6,14 +6,25 @@ const assertEqual = function(actual, expected) {
   }
 
 };
-const eqArrays = function(arr1, arr2) {
-  
-  //takes in 2 arrays and returns true of false
-  for (let i = 0; i < arr1.length; i ++) {
-    if (arr1[i] !== arr2[1])
+const eqArrays = function(actual, expected) {
+  if (actual.length !== expected.length) {
+      console.log(false);
+      return false;
   }
-
-  return;
+  for (let i = 0; i < actual.length; i++) {
+    if (actual[i] !== expected[i]) {
+      console.log(false);
+      return false;
+    }
+  }
+  console.log(true);
+  return true;
 };
 
-console.log(eqArrays(["a","b","c"],["e","f","g"]));
+eqArrays([1, 2, 3], [1, 2, 3]) // => true
+eqArrays([1, 2, 3], [3, 2, 1]) // => false
+
+eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
+eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false
+
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
