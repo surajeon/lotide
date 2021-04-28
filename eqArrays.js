@@ -6,19 +6,14 @@ const assertEqual = function(actual, expected) {
   }
 
 };
-
-const num1 = [1,2,3];
-const num2 = [2,2,3];
-
 const eqArrays = function(arr1, arr2) {
-  //takes in 2 arrays and returns true of false
-  for (let i of arr1) {
-    for (let j of arr2) {
-      if(arr1[i] !== arr2[i]) {
-        console.log(arr[i]);
-        return false;
-      } 
-    }
-  }
   
+  //takes in 2 arrays and returns true of false
+  for (let i = 0; i < arr1.length; i ++) {
+    if (arr1[i] !== arr2[1])
+  }
+
+  return;
 };
+
+console.log(eqArrays(["a","b","c"],["e","f","g"]));
