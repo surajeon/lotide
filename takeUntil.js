@@ -1,13 +1,26 @@
-const takeUntil = function(array, callback) {
-  const newArray = [];
-  for (const i in array) {
-    if (!(callback(array[i]))) {
-      newArray.push(array[i]);
+const takeUntil = (array,callback) => {
+  let result = [];
+  for (const item of array) {
+    if (callback(item)) {
+      return result;
     } else {
-      return newArray; 
+      result.push(item)
     }
   }
-};
+}
+
+//another way
+
+// const takeUntil = function(array, callback) {
+//   const newArray = [];
+//   for (const i in array) {
+//     if (!(callback(array[i]))) {
+//       newArray.push(array[i]);
+//     } else {
+//       return newArray; 
+//     }
+//   }
+// };
 
 
 
