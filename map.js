@@ -27,27 +27,19 @@ const assertArraysEqual = function (array1, array2) {
 }
 
 
-const middle = function(array) {
-  let middleArray = [];
-    if (array.length % 2 === 0) {
-      let i = array.length / 2;
-      let y = i - 1;
-      middleArray.push(array[y], array[i]);
-    } else {
-      let i = (array.length - 1) / 2;
-      middleArray.push(array[i]);
-    }
-    return middleArray;
+const words = ["ground", "control", "to", "major", "tom"];
+
+const map = function(array, callback) {
+  const results = [];
+  for (let item of array) {
+    results.push(callback(item));
   }
-console.log(middle([1,2,"hello",4,5,6]));
+  return results;
+}
 
 
-assertArraysEqual(middle([2,4,5]), [4]); //true
-// TEST CODE
-// ...
+const results1 = map(words, word => word[0]);
 
-assertArraysEqual(middle([1]),[1]); // true
-assertArraysEqual(middle([1,2]),[1]); // false
-assertArraysEqual(middle([1,2,3]),[2]); // ture
-assertArraysEqual(middle([1,2,3,4]),[2,3]); // true
-assertArraysEqual(middle([1,2,3,4,5]),[3,4]); // false
+console.log(assertArraysEqual(results1, ["g", "c", "t", "m", "t"]));
+console.log(assertArraysEqual(map(words, word => word[0]), ["g", "c", "t", "m", "t"]));
+console.log(assertArraysEqual(results1, ["g", "c", "t", "m"]));
