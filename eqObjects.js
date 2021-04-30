@@ -44,3 +44,12 @@ console.log(eqObjects(cd, dc)); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 console.log(eqObjects(cd, cd2)); // => false
+//-----------------------------------------------
+
+for (const i in obj1) {
+  if (Object.keys(obj1)[i]) !== (Object.keys(obj2)[i]) {
+    return false;
+  } else {
+    return true;
+  }
+}
