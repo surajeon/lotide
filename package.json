@@ -1,5 +1,5 @@
 {
-  "name": "lotide",
+  "name": "@surajeon/lotide",
   "version": "1.0.0",
   "main": "assertArraysEqual.js",
   "directories": {
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/surajeon/lotide.git"
   },
-  "author": "",
+  "author": "Sura Jeon",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/surajeon/lotide/issues"
@@ -22,6 +22,8 @@
     "chai": "^4.3.4",
     "mocha": "^8.3.2"
   },
-  "dependencies": {},
-  "description": ""
+  "dependencies": {
+    "my-package": "0.0.0"
+  },
+  "description": "Functions in Lotide"
 }
